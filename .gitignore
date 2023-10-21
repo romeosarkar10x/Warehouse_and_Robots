@@ -1,0 +1,9 @@
+*.o
+*.obj
+*.ar
+
+*.exe
+*.out
+
+.vscode
+*.csv
