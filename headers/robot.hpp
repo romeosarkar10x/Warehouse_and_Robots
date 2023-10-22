@@ -21,11 +21,13 @@ public:
 
   // void reset__o4();
   Record deliver(Timestamp _time, Item _item, PackingStation _packing_station);
-  Log deliver(
-    Timestamp _time,
-    std::vector<Item> _items,
-    PackingStation _packing_station
-  );
+  
+  // Log deliver(
+  //   Timestamp _time,
+  //   std::vector<Item> _items,
+  //   PackingStation _packing_station
+  // );
+  
   Log deliver(const Order& o);
   // void set__idle_since(Timestamp _timestamp)
   // {
@@ -53,7 +55,6 @@ public:
   
 private:
   u_int goto_(Dim2 _destination);
-  friend std::ostream& operator<<(std::ostream& _o, Robot _robo);
 };
 
 std::ostream& operator<<(std::ostream& _o, Robot _robo);

@@ -62,3 +62,10 @@ objects/warehouse.o: sources/warehouse.cpp
 
 
 
+
+
+.PHONY: clean
+
+# for windows
+clean:
+	del /f objects\*.o

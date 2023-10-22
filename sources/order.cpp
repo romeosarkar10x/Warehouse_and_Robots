@@ -41,8 +41,10 @@ std::vector<Order> Order::generate_random_orders(
     )
   );
 
+  // std::cout << "wait_here!" << std::endl;
   for(u_int u = 0; u < n_intervals; u++)
   {
+    // std::cout << "loop " << u << " >> ";
     time += intervals.at(u);
     orders.push_back(
       Order(
@@ -52,6 +54,7 @@ std::vector<Order> Order::generate_random_orders(
         _warehouse_dimensions
       )
     );
+    // std::cout << "loop " << u << " || ";
   }
 
   return orders;

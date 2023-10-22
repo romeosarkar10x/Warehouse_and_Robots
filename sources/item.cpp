@@ -10,7 +10,11 @@ std::vector<Item> Item::generate_random_items(Dim2 _warehouse_dimensions, u_int 
 {
   if(_n_items == UINT_MAX)
   {
-    _n_items = Item::toss(_warehouse_dimensions.x + _warehouse_dimensions.y);
+    _n_items = Item::toss(std::max(_warehouse_dimensions.x, _warehouse_dimensions.y)) + 2; // make sure there is atleast one item!
+    if(_n_items == 0)
+    {
+      std::cout << "whoa, fatal error: _n_items is 0!!" << std::endl;
+    }
   }
 
   u_int hash_max = _warehouse_dimensions.x * (_warehouse_dimensions.y - 1);

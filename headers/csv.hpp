@@ -13,7 +13,7 @@
 
 class CSV
 {
-
+  CSV() = delete;
   // CSV(const Log& log) : string()
   // {
   //   u_int size = log.size();

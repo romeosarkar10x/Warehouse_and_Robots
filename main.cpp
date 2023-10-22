@@ -17,9 +17,24 @@ int main()
   
   Warehouse w(dim, n_robots, new AlgorithmA);
   auto orders = w.generate_random_orders();
-  auto logs = w.pack(orders);
 
-  CSV::write_to_file("algorithmA.csv", logs);
+  // std::cout << orders.size() << std::endl;
+  
+  
+  // algorithmA
+  {
+    auto logs = w.pack(orders);
+    CSV::write_to_file("algorithm_a.csv", logs);
+  }
+
+  // algorithmB
+  {
+    w.reset();
+    delete w.algorithm;
+    w.algorithm = new AlgorithmB; 
+    auto logs = w.pack(orders);
+    CSV::write_to_file("algorithm_b.csv", logs);
+  }
 
   return 0;
 }

@@ -23,6 +23,7 @@ inline u_int PackingStation::toss(u_int n)
 {
   if(0 == n)
   {
+    std::cout << "there is an error here : ds3rif" << std::endl;
     return 0;
   }
 

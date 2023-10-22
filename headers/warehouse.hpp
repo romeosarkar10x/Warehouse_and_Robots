@@ -22,11 +22,8 @@ public:
   
   Warehouse(Dim2 _dimensions, u_int _n_robots, Algorithm* _algorithm);
   
-
   std::vector<Log> pack(const std::vector<Order>& orders);
-
   void reset();
-
   std::vector<Order> generate_random_orders(Timestamp _start_time = Timestamp());
 
 private:
